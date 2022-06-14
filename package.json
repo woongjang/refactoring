@@ -1,0 +1,24 @@
+{
+  "name": "refactoring",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node ./$npm_config_chapter/main.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WoongJang/refactoring.git"
+  },
+  "author": "WON",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WoongJang/refactoring/issues"
+  },
+  "homepage": "https://github.com/WoongJang/refactoring#readme",
+  "dependencies": {
+    "@types/node": "^17.0.42",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3"
+  }
+}
