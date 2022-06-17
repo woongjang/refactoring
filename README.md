@@ -1,4 +1,9 @@
-# refactoring
+# Refactoring
+
+Notion
+****
+https://woongjang.notion.site/60db2ebf85794e3d927845f74d3164c0
+****
 
 2022/06/14 test 코드 작성전에는 아래 명령어로 실행
 

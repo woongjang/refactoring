@@ -1,5 +1,18 @@
-type PlayID = "hamlet" | "as-like" | "othello";
-type Genre = "tragedy" | "comedy";
+type PlayID = 'hamlet' | 'as-like' | 'othello';
+type Genre = 'tragedy' | 'comedy';
+
+export interface StatementData {
+  customer: Invoice['customer'];
+  performances: EnrichPerformance[];
+  totalAmount: number;
+  totalVolumeCredits: number;
+}
+
+export interface EnrichPerformance extends Performance {
+  play: Play;
+  amount: number;
+  volumeCredits: number;
+}
 
 export interface Performance {
   playID: PlayID;
