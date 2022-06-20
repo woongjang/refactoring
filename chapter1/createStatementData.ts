@@ -1,4 +1,4 @@
-import { EnrichPerformance, Invoice, Performance, Play, Plays, StatementData } from '../types';
+import { EnrichPerformance, Invoice, Performance, Play, Plays, StatementData } from './types';
 
 class PerformanceCalculator {
   performance: Performance;

@@ -1,4 +1,4 @@
-import { createStatementData } from './data/createStatementData';
+import { createStatementData } from './createStatementData';
 import { EnrichPerformance, Invoice, Performance, Play, Plays, StatementData } from './types';
 
 export function statement(invoice: Invoice, plays: Plays) {
