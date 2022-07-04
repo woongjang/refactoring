@@ -1,33 +1,26 @@
 import { Province } from './Province';
 
-export class Producer {
-  _province: Province;
-  _cost: number;
-  _name: string;
-  _production: number;
+export interface Producer {
+  province?: Province;
+  cost: number;
+  name: string;
+  production: number;
+}
 
-  constructor(aProvince: Province, data: Producer) {
-    this._province = aProvince;
-    this._cost = data.cost;
-    this._name = data.name;
-    this._production = data.production || 0;
-  }
+export function setProduction(producer: Producer, production: number): Producer {
+  return {
+    ...producer,
+    ...(producer.province && {
+      ...producer.province,
+      totalProduction: production - producer.production,
+    })
+  };
+}
 
-  get name() {
-    return this._name;
-  }
-  get cost() {
-    return this._cost;
-  }
-  set cost(arg: number) {
-    this._cost = arg;
-  }
-
-  get production() {
-    return this._production;
-  }
-  set production(arg: number) {
-    this._province.totalProduction += arg - this._production;
-    this._production = arg;
+export function getProducer(aProvince: Province, data: Producer): Producer {
+  return {
+    ...data,
+    production: data.production || 0,
+    province: aProvince,
   }
 }
