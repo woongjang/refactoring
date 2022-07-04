@@ -8,6 +8,14 @@ export interface Province {
   price: number;
 }
 
+export interface ComputedDemandValue {
+  shortfall: number;
+  satisfiedDemand: number;
+  demandValue: number;
+  demandCost: number;
+  profit: number
+}
+
 export function getProvince(data: Province): Province {
   let totalProduction = 0;
   const producers: Producer[] = [];
@@ -22,7 +30,7 @@ export function getProvince(data: Province): Province {
   };
 }
 
-export function getDemandValuesFromProvince(data: Province) {
+export function getDemandValuesFromProvince(data: Province): ComputedDemandValue {
   const { demand, totalProduction, price } = data;
   const shortfall = demand - totalProduction;
   const satisfiedDemand = Math.min(demand, totalProduction);
