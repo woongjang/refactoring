@@ -1,7 +1,7 @@
 export interface Invoice {
   customer: string;
   orders: Order[];
-  dueDate: Date;
+  dueDate?: Date;
 }
 
 export interface Order {

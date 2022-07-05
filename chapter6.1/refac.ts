@@ -2,7 +2,7 @@
 
 import { Invoice } from './types';
 
-function printOwing(invoice: Invoice) {
+export function printOwing(invoice: Invoice) {
   printBanner();
 
   // 미해결 채무(outstanding)를 계산한다.
@@ -23,7 +23,7 @@ function calculateOutstanding(invoice: Invoice) {
 function printDetails(invoice: Invoice, outstanding: number) {
   console.log(`고객명: ${invoice.customer}`);
   console.log(`채무액: ${outstanding}`);
-  console.log(`마감일: ${invoice.dueDate.toLocaleDateString()}`);
+  if (invoice.dueDate) console.log(`마감일: ${invoice.dueDate.toLocaleDateString()}`);
 }
 function printBanner() {
   console.log('*****************');
