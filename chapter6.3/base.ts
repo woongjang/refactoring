@@ -1,5 +1,7 @@
+import { Order } from './types';
+
 // 리팩토링 전
-function baseExample(order: any) {
+function baseExample(order: Order) {
   return (
     order.quantity * order.itemPrice -
     Math.max(0, order.quantity - 500) * order.itemPrice * 0.05 +
@@ -8,7 +10,7 @@ function baseExample(order: any) {
 }
 
 // 리팩토링 후
-function refacExample(order: any) {
+function refacExample(order: Order) {
   const basePrice = order.quantity * order.itemPrice;
   const quantityDiscount = Math.max(0, order.quantity - 500) * order.itemPrice * 0.05;
   const shipping = Math.min(basePrice * 0.1, 100);
@@ -18,8 +20,8 @@ function refacExample(order: any) {
 // 클래스 내부에서
 // 리팩토링 전
 class BaseOrder {
-  _data: any;
-  constructor(aRecord: any) {
+  _data: Order;
+  constructor(aRecord: Order) {
     this._data = aRecord;
   }
 
@@ -41,8 +43,8 @@ class BaseOrder {
 
 // 리팩토링 후
 class RefacOrder {
-  _data: any;
-  constructor(aRecord: any) {
+  _data: Order;
+  constructor(aRecord: Order) {
     this._data = aRecord;
   }
 
