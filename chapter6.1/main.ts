@@ -1,11 +1,10 @@
+import { Invoice } from './types';
+
 function calculateOutstanding(): number {
   return 0;
 }
 function printBanner() {}
 
-interface Invoice {
-  customer: string;
-}
 
 function basePrintOwing(invoice: Invoice) {
   printBanner();
